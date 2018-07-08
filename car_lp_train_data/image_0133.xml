@@ -1,0 +1,26 @@
+<annotation>
+	<folder>car_lp_data</folder>
+	<filename>image_0133.jpg</filename>
+	<path>D:\Projects\LPR_18\car_lp_data\image_0133.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>851</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>licencePlate</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>144</xmin>
+			<ymin>538</ymin>
+			<xmax>407</xmax>
+			<ymax>653</ymax>
+		</bndbox>
+	</object>
+</annotation>
