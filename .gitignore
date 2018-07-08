@@ -260,6 +260,8 @@ paket-files/
 __pycache__/
 *.pyc
 
+.git/
+
 #tensorflow output directories
 training_data/
 inference_graph/
