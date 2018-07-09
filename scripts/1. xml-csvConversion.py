@@ -10,7 +10,6 @@ TEST_IMAGES_DIR = os.getcwd() + "/car_lp_test_data/"
 
 MIN_NUM_IMAGES_REQUIRED_FOR_TRAINING = 10
 MIN_NUM_IMAGES_SUGGESTED_FOR_TRAINING = 100
-
 MIN_NUM_IMAGES_REQUIRED_FOR_TESTING = 3
 
 # output .csv file names/locations
