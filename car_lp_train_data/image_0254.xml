@@ -1,0 +1,26 @@
+<annotation>
+	<folder>lp</folder>
+	<filename>image_0254.jpg</filename>
+	<path>C:\Users\Josh\Desktop\lp\image_0254.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>licencePlate</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>148</xmin>
+			<ymin>228</ymin>
+			<xmax>277</xmax>
+			<ymax>258</ymax>
+		</bndbox>
+	</object>
+</annotation>
