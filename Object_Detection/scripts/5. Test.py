@@ -7,9 +7,9 @@ from utils import label_map_util
 from utils import visualization_utils as vis_util
 
 # module level variables ##############################################################################################
-TEST_IMAGE_DIR = os.getcwd() +  "/car_lp_test_data"
-FROZEN_INFERENCE_GRAPH_LOC = os.getcwd() + "/inference_graph/frozen_inference_graph.pb"
-LABELS_LOC = os.getcwd() + "/" + "label_map.pbtxt"
+TEST_IMAGE_DIR = os.getcwd() +  "/Object_Detection/car_lp_test_data"
+FROZEN_INFERENCE_GRAPH_LOC = os.getcwd() + "/Object_Detection/inference_graph/frozen_inference_graph.pb"
+LABELS_LOC = os.getcwd() +  "/Object_Detection/label_map.pbtxt"
 NUM_CLASSES = 1
 
 #######################################################################################################################
@@ -88,6 +88,7 @@ def main():
                                                                    category_index,
                                                                    use_normalized_coordinates=True,
                                                                    line_thickness=8)
+                                                                
                 cv2.imshow("image_np", image_np)
                 cv2.waitKey()
             # end for

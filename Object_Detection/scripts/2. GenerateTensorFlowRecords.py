@@ -9,16 +9,16 @@ from collections import namedtuple
 # module-level variables ##############################################################################################
 
 # input training CSV file and training images directory
-TRAIN_CSV_FILE_LOC = os.getcwd() + "/training_data/" + "train_labels.csv"
-TRAIN_IMAGES_DIR = os.getcwd() + "/car_lp_train_data"
+TRAIN_CSV_FILE_LOC = os.getcwd() + "/Object_Detection/training_data/train_labels.csv"
+TRAIN_IMAGES_DIR = os.getcwd() + "/Object_Detection/car_lp_train_data"
 
 # input test CSV file and test images directory
-EVAL_CSV_FILE_LOC = os.getcwd() + "/training_data/" + "eval_labels.csv"
-TEST_IMAGES_DIR = os.getcwd() + "/car_lp_test_data"
+EVAL_CSV_FILE_LOC = os.getcwd() + "/Object_Detection/training_data/eval_labels.csv"
+TEST_IMAGES_DIR = os.getcwd() + "/Object_Detection/car_lp_test_data"
 
 # training and testing output .tfrecord files
-TRAIN_TFRECORD_FILE_LOC = os.getcwd() + "/training_data/" + "train.tfrecord"
-EVAL_TFRECORD_FILE_LOC = os.getcwd() + "/training_data/" + "eval.tfrecord"
+TRAIN_TFRECORD_FILE_LOC = os.getcwd() + "/Object_Detection/training_data/train.tfrecord"
+EVAL_TFRECORD_FILE_LOC = os.getcwd() + "/Object_Detection/training_data/eval.tfrecord"
 
 #######################################################################################################################
 def main():
@@ -29,7 +29,7 @@ def main():
     # write the train data .tfrecord file
     trainTfRecordFileWriteSuccessful = writeTfRecordFile(TRAIN_CSV_FILE_LOC, TRAIN_TFRECORD_FILE_LOC, TRAIN_IMAGES_DIR)
     if trainTfRecordFileWriteSuccessful:
-        print("successfully created the training TFRectrds, saved to: " + TRAIN_TFRECORD_FILE_LOC)
+        print("successfully created the training TFRecords, saved to: " + TRAIN_TFRECORD_FILE_LOC)
     # end if
 
     # write the eval data .tfrecord file

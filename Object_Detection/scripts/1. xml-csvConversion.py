@@ -5,15 +5,15 @@ import xml.etree.ElementTree as ET
 
 # module level variables 
 # train and test directories
-TRAINING_IMAGES_DIR = os.getcwd() + "/car_lp_train_data/"
-TEST_IMAGES_DIR = os.getcwd() + "/car_lp_test_data/"
+TRAINING_IMAGES_DIR = os.getcwd() + "/Object_Detection/car_lp_train_data/"
+TEST_IMAGES_DIR = os.getcwd() + "/Object_Detection/car_lp_test_data/"
 
 MIN_NUM_IMAGES_REQUIRED_FOR_TRAINING = 10
 MIN_NUM_IMAGES_SUGGESTED_FOR_TRAINING = 100
 MIN_NUM_IMAGES_REQUIRED_FOR_TESTING = 3
 
 # output .csv file names/locations
-TRAINING_DATA_DIR = os.getcwd() + "/" + "training_data"
+TRAINING_DATA_DIR = os.getcwd() + "/Object_Detection/training_data"
 TRAIN_CSV_FILE_LOC = TRAINING_DATA_DIR + "/" + "train_labels.csv"
 EVAL_CSV_FILE_LOC = TRAINING_DATA_DIR + "/" + "eval_labels.csv"
 
