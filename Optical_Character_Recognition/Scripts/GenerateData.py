@@ -14,9 +14,8 @@ def main():
     imgTrainingNumbers = cv2.imread(os.getcwd() + "/Optical_Character_Recognition/Training_Data/training_chars.png")            # read in training numbers image
 
     if imgTrainingNumbers is None:                          # if image was not read successfully
-        print ("error: image not read from file \n\n")        # print error message to std out
-        os.system("pause") 
-                                         # pause so user can see error message
+        print ("error: image not read from file \n\n")      # print error message to std out
+        os.system("pause")                                  # pause so user can see error message
         return                                              # and exit function (which exits program)
     # end if
 
