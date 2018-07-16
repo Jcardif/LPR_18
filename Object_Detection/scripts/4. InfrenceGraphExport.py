@@ -15,14 +15,14 @@ INPUT_TYPE = "image_tensor"
 INPUT_SHAPE = None
 
 # the location of the big config file
-PIPELINE_CONFIG_LOC =  os.getcwd() + "/" + "ssd_inception_v2_coco.config"
+PIPELINE_CONFIG_LOC =  os.getcwd() + "/Object_Detection/ssd_inception_v2_coco.config"
 
 # the final checkpoint result of the training process
-TRAINED_CHECKPOINT_PREFIX_LOC = os.getcwd() + "/training_data/model.ckpt-500"
+TRAINED_CHECKPOINT_PREFIX_LOC = os.getcwd() + "/Object_Detection/training_data/model.ckpt-1000"
 
 # the output directory to place the inference graph data, note that it's ok if this directory does not already exist
 # because the call to export_inference_graph() below will create this directory if it does not exist already
-OUTPUT_DIR = os.getcwd() + "/" + "inference_graph"
+OUTPUT_DIR = os.getcwd() + "/Object_Detection/inference_graph"
 
 #######################################################################################################################
 def main(_):
