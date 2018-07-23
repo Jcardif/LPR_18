@@ -2,6 +2,11 @@ import numpy as np
 import os
 import tensorflow as tf
 import cv2
+import sys
+
+sys.path.append(os.getcwd() + "/Optical_Character_Recognition/Scripts/")
+import TrainandTest as tt
+
 
 from utils import label_map_util
 from utils import visualization_utils as vis_util
