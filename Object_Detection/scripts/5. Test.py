@@ -11,6 +11,7 @@ import TrainandTest as tt
 from utils import label_map_util
 from utils import visualization_utils as vis_util
 
+
 # module level variables ##############################################################################################
 TEST_IMAGE_DIR = os.getcwd() +  "/Object_Detection/car_lp_test_data"
 FROZEN_INFERENCE_GRAPH_LOC = os.getcwd() + "/Object_Detection/inference_graph/frozen_inference_graph.pb"

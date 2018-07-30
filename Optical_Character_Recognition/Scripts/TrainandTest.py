@@ -67,7 +67,6 @@ def main():
         print ("error: image not read from file \n\n")        # print error message to std out
         os.system("pause")                                  # pause so user can see error message
         return                                              # and exit function (which exits program)
-    # end if
 
     imgGray = cv2.cvtColor(imgTestingNumbers, cv2.COLOR_BGR2GRAY)       # get grayscale image
     imgBlurred = cv2.GaussianBlur(imgGray, (5,5), 0)                    # blur
