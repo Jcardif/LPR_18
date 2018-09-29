@@ -28,8 +28,8 @@ def main():
 
     # this next comment line is necessary to avoid a false PyCharm warning
     # noinspection PyUnresolvedReferences
-    if tf.__version__ < '1.5.0':
-        raise ImportError('Please upgrade your tensorflow installation to v1.5.* or later!')
+    if tf.__version__ < '1.0.0':
+        raise ImportError('Please upgrade your tensorflow installation to v1.0.* or later!')
     # end if
 
     # load a (frozen) TensorFlow model into memory
