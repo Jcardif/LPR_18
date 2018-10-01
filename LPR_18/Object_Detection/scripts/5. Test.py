@@ -20,17 +20,10 @@ LABELS_LOC = os.getcwd() +  "/Object_Detection/label_map.pbtxt"
 NUM_CLASSES = 1
 
 #######################################################################################################################
-def main():
+def main(image_path):
     print("starting program . . .")
-
     if not checkIfNecessaryPathsAndFilesExist():
         return
-    # end if
-
-    # this next comment line is necessary to avoid a false PyCharm warning
-    # noinspection PyUnresolvedReferences
-    if tf.__version__ < '1.0.0':
-        raise ImportError('Please upgrade your tensorflow installation to v1.0.* or later!')
     # end if
 
     # load a (frozen) TensorFlow model into memory
@@ -51,63 +44,53 @@ def main():
                                                                 use_display_name=True)
     category_index = label_map_util.create_category_index(categories)
 
-    imageFilePaths = []
-    for imageFileName in os.listdir(TEST_IMAGE_DIR):
-        if imageFileName.endswith(".jpg"):
-            imageFilePaths.append(TEST_IMAGE_DIR + "/" + imageFileName)
-        # end if
-    # end for
-
     with detection_graph.as_default():
         with tf.Session(graph=detection_graph) as sess:
-            for image_path in imageFilePaths:
 
-                print(image_path)
+            print(image_path)
 
-                image_np = cv2.imread(image_path)
+            image_np = cv2.imread(image_path)
 
-                if image_np is None:
-                    print("error reading file " + image_path)
-                    continue
-                # end if
+            if image_np is None:
+                print("error reading file " + image_path)       
 
-                # Definite input and output Tensors for detection_graph
-                image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
-                # Each box represents a part of the image where a particular object was detected.
-                detection_boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
-                # Each score represent how level of confidence for each of the objects.
-                # Score is shown on the result image, together with the class label.
-                detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
-                detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
-                num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+            # Definite input and output Tensors for detection_graph
+            image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
+            # Each box represents a part of the image where a particular object was detected.
+            detection_boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
+            # Each score represent how level of confidence for each of the objects.
+            # Score is shown on the result image, together with the class label.
+            detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
+            detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
+            num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
-                # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
-                image_np_expanded = np.expand_dims(image_np, axis=0)
-                # Actual detection.
-                (boxes, scores, classes, num) = sess.run(
-                    [detection_boxes, detection_scores, detection_classes, num_detections],
-                    feed_dict={image_tensor: image_np_expanded})
-                # Visualization of the results of a detection.
-                vis_util.visualize_boxes_and_labels_on_image_array(image_np,
-                                                                   np.squeeze(boxes),
-                                                                   np.squeeze(classes).astype(np.int32),
-                                                                   np.squeeze(scores),
-                                                                   category_index,
-                                                                   use_normalized_coordinates=True,
-                                                                   line_thickness=8)
+            # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
+            image_np_expanded = np.expand_dims(image_np, axis=0)
+            # Actual detection.
+            (boxes, scores, classes, num) = sess.run(
+                [detection_boxes, detection_scores, detection_classes, num_detections],
+                feed_dict={image_tensor: image_np_expanded})
+            # Visualization of the results of a detection.
+            vis_util.visualize_boxes_and_labels_on_image_array(image_np,
+                                                                np.squeeze(boxes),
+                                                                np.squeeze(classes).astype(np.int32),
+                                                                np.squeeze(scores),
+                                                                category_index,
+                                                                use_normalized_coordinates=True,
+                                                                line_thickness=8)
                 
-                im_height,im_length=image_np.shape[:2]
-                ymin = boxes[0,0,0]*im_height
-                xmin = boxes[0,0,1]*im_length
-                ymax = boxes[0,0,2]*im_height
-                xmax = boxes[0,0,3]*im_length     
+            im_height,im_length=image_np.shape[:2]
+            ymin = boxes[0,0,0]*im_height
+            xmin = boxes[0,0,1]*im_length
+            ymax = boxes[0,0,2]*im_height
+            xmax = boxes[0,0,3]*im_length     
                 
-                img=Image.open(image_path)
-                img2=img.crop((xmin,ymin,xmax,ymax))
-                img2.save('qwerty765.jpg')
+            img=Image.open(image_path)
+            img2=img.crop((xmin,ymin,xmax,ymax))
+            img2.save('numberPlate.jpg')
 
-                cv2.imshow("image_np", image_np)  
-                cv2.waitKey()
+            cv2.imshow("image_np", image_np)  
+            cv2.waitKey()
             # end for
         # end with
     # end with
@@ -138,4 +121,4 @@ def checkIfNecessaryPathsAndFilesExist():
 
 #######################################################################################################################
 if __name__ == "__main__":
-    main()
+    main("D:\Projects\LPR_18\LPR_18\Object_Detection\car_lp_test_data\image_0014.jpg")
