@@ -9,6 +9,7 @@ import TrainandTest as tt
 
 
 from utils import label_map_util
+from PIL import Image 
 from utils import visualization_utils as vis_util
 
 
@@ -94,8 +95,18 @@ def main():
                                                                    category_index,
                                                                    use_normalized_coordinates=True,
                                                                    line_thickness=8)
-                                                                
-                cv2.imshow("image_np", image_np)
+                
+                im_height,im_length=image_np.shape[:2]
+                ymin = boxes[0,0,0]*im_height
+                xmin = boxes[0,0,1]*im_length
+                ymax = boxes[0,0,2]*im_height
+                xmax = boxes[0,0,3]*im_length     
+                
+                img=Image.open(image_path)
+                img2=img.crop((xmin,ymin,xmax,ymax))
+                img2.save('qwerty765.jpg')
+
+                cv2.imshow("image_np", image_np)  
                 cv2.waitKey()
             # end for
         # end with

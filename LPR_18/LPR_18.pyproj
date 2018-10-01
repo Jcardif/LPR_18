@@ -83,12 +83,6 @@
     <Content Include="License Plate Detection\__pycache__\PossibleChar.cpython-36.pyc" />
     <Content Include="License Plate Detection\__pycache__\PossiblePlate.cpython-36.pyc" />
     <Content Include="License Plate Detection\__pycache__\Preprocess.cpython-36.pyc" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0001.jpg" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0001.xml" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0005.jpg" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0005.xml" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0011.jpg" />
-    <Content Include="Object_Detection\car_lp_test_data\image_0011.xml" />
     <Content Include="Object_Detection\car_lp_test_data\image_0014.jpg" />
     <Content Include="Object_Detection\car_lp_test_data\image_0014.xml" />
     <Content Include="Object_Detection\car_lp_test_data\image_0016.jpg" />
