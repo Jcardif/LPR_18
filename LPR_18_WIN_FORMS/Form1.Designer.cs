@@ -31,7 +31,7 @@
             this.vehiclePictureBox = new System.Windows.Forms.PictureBox();
             this.extractNumberPlateBtn = new System.Windows.Forms.Button();
             this.selectVehicleBtn = new System.Windows.Forms.Button();
-            this.getLicensePlateNoBtn = new System.Windows.Forms.Button();
+            this.openCvOCRoBtn = new System.Windows.Forms.Button();
             this.uploadToDbBtn = new System.Windows.Forms.Button();
             this.GetDataBtn = new System.Windows.Forms.Button();
             this.lPpictureBox = new System.Windows.Forms.PictureBox();
@@ -40,6 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.msftComputerVisionOCRBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lPpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -73,29 +74,29 @@
             this.selectVehicleBtn.UseVisualStyleBackColor = true;
             this.selectVehicleBtn.Click += new System.EventHandler(this.SelectCarClick);
             // 
-            // getLicensePlateNoBtn
+            // openCvOCRoBtn
             // 
-            this.getLicensePlateNoBtn.Location = new System.Drawing.Point(29, 358);
-            this.getLicensePlateNoBtn.Name = "getLicensePlateNoBtn";
-            this.getLicensePlateNoBtn.Size = new System.Drawing.Size(130, 23);
-            this.getLicensePlateNoBtn.TabIndex = 3;
-            this.getLicensePlateNoBtn.Text = "Get License Plate No";
-            this.getLicensePlateNoBtn.UseVisualStyleBackColor = true;
+            this.openCvOCRoBtn.Location = new System.Drawing.Point(29, 360);
+            this.openCvOCRoBtn.Name = "openCvOCRoBtn";
+            this.openCvOCRoBtn.Size = new System.Drawing.Size(130, 23);
+            this.openCvOCRoBtn.TabIndex = 3;
+            this.openCvOCRoBtn.Text = "OCR With OpenCV";
+            this.openCvOCRoBtn.UseVisualStyleBackColor = true;
             // 
             // uploadToDbBtn
             // 
-            this.uploadToDbBtn.Location = new System.Drawing.Point(188, 316);
+            this.uploadToDbBtn.Location = new System.Drawing.Point(188, 275);
             this.uploadToDbBtn.Name = "uploadToDbBtn";
-            this.uploadToDbBtn.Size = new System.Drawing.Size(137, 23);
+            this.uploadToDbBtn.Size = new System.Drawing.Size(187, 23);
             this.uploadToDbBtn.TabIndex = 4;
             this.uploadToDbBtn.Text = "Upload To Database";
             this.uploadToDbBtn.UseVisualStyleBackColor = true;
             // 
             // GetDataBtn
             // 
-            this.GetDataBtn.Location = new System.Drawing.Point(188, 358);
+            this.GetDataBtn.Location = new System.Drawing.Point(188, 316);
             this.GetDataBtn.Name = "GetDataBtn";
-            this.GetDataBtn.Size = new System.Drawing.Size(137, 23);
+            this.GetDataBtn.Size = new System.Drawing.Size(187, 23);
             this.GetDataBtn.TabIndex = 5;
             this.GetDataBtn.Text = "Get Data";
             this.GetDataBtn.UseVisualStyleBackColor = true;
@@ -150,11 +151,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(353, 283);
             this.dataGridView1.TabIndex = 11;
             // 
+            // msftComputerVisionOCRBtn
+            // 
+            this.msftComputerVisionOCRBtn.Location = new System.Drawing.Point(188, 359);
+            this.msftComputerVisionOCRBtn.Name = "msftComputerVisionOCRBtn";
+            this.msftComputerVisionOCRBtn.Size = new System.Drawing.Size(187, 23);
+            this.msftComputerVisionOCRBtn.TabIndex = 12;
+            this.msftComputerVisionOCRBtn.Text = "OCR With Microsoft Computer Vison";
+            this.msftComputerVisionOCRBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.msftComputerVisionOCRBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -163,7 +174,7 @@
             this.Controls.Add(this.lPpictureBox);
             this.Controls.Add(this.GetDataBtn);
             this.Controls.Add(this.uploadToDbBtn);
-            this.Controls.Add(this.getLicensePlateNoBtn);
+            this.Controls.Add(this.openCvOCRoBtn);
             this.Controls.Add(this.selectVehicleBtn);
             this.Controls.Add(this.extractNumberPlateBtn);
             this.Controls.Add(this.vehiclePictureBox);
@@ -183,7 +194,7 @@
         private System.Windows.Forms.PictureBox vehiclePictureBox;
         private System.Windows.Forms.Button extractNumberPlateBtn;
         private System.Windows.Forms.Button selectVehicleBtn;
-        private System.Windows.Forms.Button getLicensePlateNoBtn;
+        private System.Windows.Forms.Button openCvOCRoBtn;
         private System.Windows.Forms.Button uploadToDbBtn;
         private System.Windows.Forms.Button GetDataBtn;
         private System.Windows.Forms.PictureBox lPpictureBox;
@@ -192,6 +203,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button msftComputerVisionOCRBtn;
     }
 }
 

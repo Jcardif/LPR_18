@@ -21,9 +21,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="License Plate Detection\" />
-    <Folder Include="License Plate Detection\LicPlateImages\" />
-    <Folder Include="License Plate Detection\__pycache__\" />
     <Folder Include="Object_Detection\" />
     <Folder Include="Object_Detection\car_lp_test_data\" />
     <Folder Include="Object_Detection\car_lp_train_data\" />
@@ -43,12 +40,6 @@
     <Folder Include="Optical_Character_Recognition\Training_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="License Plate Detection\DetectChars.py" />
-    <Compile Include="License Plate Detection\DetectPlates.py" />
-    <Compile Include="License Plate Detection\Main.py" />
-    <Compile Include="License Plate Detection\PossibleChar.py" />
-    <Compile Include="License Plate Detection\PossiblePlate.py" />
-    <Compile Include="License Plate Detection\Preprocess.py" />
     <Compile Include="Object_Detection\scripts\1. xml-csvConversion.py" />
     <Compile Include="Object_Detection\scripts\2. GenerateTensorFlowRecords.py" />
     <Compile Include="Object_Detection\scripts\3. Train.py" />
@@ -58,31 +49,6 @@
     <Compile Include="Optical_Character_Recognition\Scripts\TrainandTest.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="License Plate Detection\classifications.txt" />
-    <Content Include="License Plate Detection\flattened_images.txt" />
-    <Content Include="License Plate Detection\imgOriginalScene.png" />
-    <Content Include="License Plate Detection\LicPlateImages\1.png" />
-    <Content Include="License Plate Detection\LicPlateImages\10.png" />
-    <Content Include="License Plate Detection\LicPlateImages\11.png" />
-    <Content Include="License Plate Detection\LicPlateImages\12.png" />
-    <Content Include="License Plate Detection\LicPlateImages\13.png" />
-    <Content Include="License Plate Detection\LicPlateImages\14.png" />
-    <Content Include="License Plate Detection\LicPlateImages\15.png" />
-    <Content Include="License Plate Detection\LicPlateImages\16.png" />
-    <Content Include="License Plate Detection\LicPlateImages\2.png" />
-    <Content Include="License Plate Detection\LicPlateImages\3.png" />
-    <Content Include="License Plate Detection\LicPlateImages\4.png" />
-    <Content Include="License Plate Detection\LicPlateImages\5.png" />
-    <Content Include="License Plate Detection\LicPlateImages\6.png" />
-    <Content Include="License Plate Detection\LicPlateImages\7.png" />
-    <Content Include="License Plate Detection\LicPlateImages\8.png" />
-    <Content Include="License Plate Detection\LicPlateImages\9.png" />
-    <Content Include="License Plate Detection\__pycache__\DetectChars.cpython-36.pyc" />
-    <Content Include="License Plate Detection\__pycache__\DetectPlates.cpython-36.pyc" />
-    <Content Include="License Plate Detection\__pycache__\Main.cpython-36.pyc" />
-    <Content Include="License Plate Detection\__pycache__\PossibleChar.cpython-36.pyc" />
-    <Content Include="License Plate Detection\__pycache__\PossiblePlate.cpython-36.pyc" />
-    <Content Include="License Plate Detection\__pycache__\Preprocess.cpython-36.pyc" />
     <Content Include="Object_Detection\car_lp_test_data\image_0014.jpg" />
     <Content Include="Object_Detection\car_lp_test_data\image_0014.xml" />
     <Content Include="Object_Detection\car_lp_test_data\image_0016.jpg" />
