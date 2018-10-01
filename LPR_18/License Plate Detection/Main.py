@@ -27,7 +27,7 @@ def main():
         return                                                          # and exit program
     # end if
 
-    imgOriginalScene  = cv2.imread("E:\Programming\MachineLearning\OpenCV_3_License_Plate_Recognition_Python\LicPlateImages\1.png")               # open image
+    imgOriginalScene  = cv2.imread("E:\Projects\LPR_18\Object_Detection\car_lp_train_data\image_0130.jpg")               # open image
 
     if imgOriginalScene is None:                            # if image was not read successfully
         print("\nerror: image not read from file \n\n")  # print error message to std out
@@ -52,8 +52,8 @@ def main():
                 # suppose the plate with the most recognized chars (the first plate in sorted by string length descending order) is the actual plate
         licPlate = listOfPossiblePlates[0]
 
-        cv2.imshow("imgPlate", licPlate.imgPlate)           # show crop of plate and threshold of plate
-        cv2.imshow("imgThresh", licPlate.imgThresh)
+       # cv2.imshow("imgPlate", licPlate.imgPlate)           # show crop of plate and threshold of plate
+       # cv2.imshow("imgThresh", licPlate.imgThresh)
 
         if len(licPlate.strChars) == 0:                     # if no chars were found in the plate
             print("\nno characters were detected\n\n")  # show message
@@ -73,7 +73,7 @@ def main():
 
     # end if else
 
-    cv2.waitKey(0)					# hold windows open until user presses a key
+   # cv2.waitKey(0)					# hold windows open until user presses a key
 
     return
 # end main
