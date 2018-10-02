@@ -24,6 +24,8 @@ namespace LPR_18_WIN_FORMS
 
         private void SelectCarClick(object sender, EventArgs e)
         {
+            if(lPpictureBox.Image!=null)
+                lPpictureBox.Image.Dispose();
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -54,19 +56,30 @@ namespace LPR_18_WIN_FORMS
             await ExecutePythonScript();
 
             lPpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            lPpictureBox.Image = new Bitmap(@"D:\Projects\LPR_18\LPR_18\numberPlate.jpg");
+            try
+            {
+                lPpictureBox.Image = new Bitmap(@"D:\Projects\LPR_18\LPR_18\numberPlate.jpg");
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private async Task ExecutePythonScript()
-        {
-            //var setup = Python.CreateRuntimeSetup(null);
-            //var runtime = new ScriptRuntime(setup);
-            //var engine = Python.GetEngine(runtime);
-            //var source = engine.CreateScriptSourceFromFile(@"D:\Projects\LPR_18\LPR_18\Object_Detection\scripts\5. Test.py");
-            //var scope = engine.CreateScope();
-            //var argv = new List<string> { vehicleFilePath };
-            //engine.GetSysModule().SetVariable("argv", argv);
-            //await source.Execute(scope);
+        {         
+
+            var cmd = @"""D:/Projects/LPR_18/LPR_18/Object_Detection/scripts/5. Test.py""";
+            var process = new Process();
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = "cmd.exe";
+            start.Arguments = $"/C python {cmd} {vehicleFilePath}";
+            start.UseShellExecute = true;
+            start.RedirectStandardOutput = false;
+            process.StartInfo = start;
+            process.Start();
+            process.WaitForExit();       
+
         }
     }
 }

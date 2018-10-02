@@ -4,9 +4,6 @@ import tensorflow as tf
 import cv2
 import sys
 
-sys.path.append(os.getcwd() + "/Optical_Character_Recognition/Scripts/")
-import TrainandTest as tt
-
 
 from utils import label_map_util
 from PIL import Image 
@@ -14,9 +11,10 @@ from utils import visualization_utils as vis_util
 
 
 # module level variables ##############################################################################################
-TEST_IMAGE_DIR = os.getcwd() +  "/Object_Detection/car_lp_test_data"
-FROZEN_INFERENCE_GRAPH_LOC = os.getcwd() + "/Object_Detection/inference_graph/frozen_inference_graph.pb"
-LABELS_LOC = os.getcwd() +  "/Object_Detection/label_map.pbtxt"
+cwd="D:\Projects\LPR_18\LPR_18"
+TEST_IMAGE_DIR = cwd +  "/Object_Detection/car_lp_test_data"
+FROZEN_INFERENCE_GRAPH_LOC = cwd + "/Object_Detection/inference_graph/frozen_inference_graph.pb"
+LABELS_LOC = cwd +  "/Object_Detection/label_map.pbtxt"
 NUM_CLASSES = 1
 
 #######################################################################################################################
@@ -87,10 +85,12 @@ def main(image_path):
                 
             img=Image.open(image_path)
             img2=img.crop((xmin,ymin,xmax,ymax))
-            img2.save('numberPlate.jpg')
+            img2.save("D:/Projects/LPR_18/LPR_18/numberPlate.jpg")
 
-            cv2.imshow("image_np", image_np)  
-            cv2.waitKey()
+            #cv2.imshow("image_np", image_np)  
+            #cv2.waitKey()
+            print("Completed. . .")
+
             # end for
         # end with
     # end with
@@ -121,4 +121,5 @@ def checkIfNecessaryPathsAndFilesExist():
 
 #######################################################################################################################
 if __name__ == "__main__":
-    main("D:\Projects\LPR_18\LPR_18\Object_Detection\car_lp_test_data\image_0014.jpg")
+    argList=sys.argv
+    main(argList[1])
